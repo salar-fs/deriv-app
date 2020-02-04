@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_crypto-price-format/precache-manifest.32f32791f9bf6e0f89fd3c4fc2bbf063.js"
+  "/br_crypto-price-format/precache-manifest.3ece1fa2cf77ebac2d58981550f3867c.js"
 );
 
 workbox.core.skipWaiting();
