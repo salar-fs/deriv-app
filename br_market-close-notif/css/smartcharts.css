@@ -4180,11 +4180,11 @@ html, body {
 .smartcharts-light .stx_current_hr_up, .smartcharts-light
   .stx_current_hr_down {
     color: #ffffff;
-    background-color: #ff444f; }
+    background-color: rgba(255, 68, 79, 0.32); }
 .smartcharts-dark .stx_current_hr_up, .smartcharts-dark
   .stx_current_hr_down {
     color: #ffffff;
-    background-color: #ff444f; }
+    background-color: rgba(255, 68, 79, 0.32); }
 /* -------- Crosshairs lines and labels-------- */
 .stx-float-price,
 .stx-float-date {
@@ -4646,9 +4646,9 @@ html, body {
     -webkit-animation: none;
             animation: none; }
 .smartcharts-light .cq-spot.cq-endpoint {
-      border-left: 2px dashed #ff444f; }
+      border-left: 2px dashed rgba(255, 68, 79, 0.32); }
 .smartcharts-dark .cq-spot.cq-endpoint {
-      border-left: 2px dashed #ff444f; }
+      border-left: 2px dashed rgba(255, 68, 79, 0.32); }
 .cq-spot.cq-endpoint:before {
       content: '\25CF';
       font-size: 18px;
@@ -4665,10 +4665,10 @@ html, body {
       top: calc(100% - 22px);
       transform: translateX(-50%); }
 .smartcharts-light .cq-spot.cq-endpoint .cq-endpoint-label {
-        background-color: #ff444f;
+        background-color: rgba(255, 68, 79, 0.32);
         color: #ffffff; }
 .smartcharts-dark .cq-spot.cq-endpoint .cq-endpoint-label {
-        background-color: #ff444f;
+        background-color: rgba(255, 68, 79, 0.32);
         color: #ffffff; }
 .closed-chart .cq-spot {
   -webkit-animation: none;
