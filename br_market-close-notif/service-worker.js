@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_market-close-notif/precache-manifest.8f4f8f18925072ee723848ce6d6b45c3.js"
+  "/br_market-close-notif/precache-manifest.508b08fcaaf033530da83c1441718b5f.js"
 );
 
 workbox.core.skipWaiting();
