@@ -9983,7 +9983,39 @@
   width: 100%;
   left: 0px;
   top: calc(40px + 40px);
-  background: var(--general-main-1); }
+  background: var(--general-main-1);
+  max-height: 100%; }
+  .dc-mobile-full-page-modal--flex {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  .dc-mobile-full-page-modal__header {
+    align-items: center;
+    border-bottom: 2px solid var(--general-section-2);
+    display: flex;
+    flex-direction: row;
+    padding: 1.6rem; }
+    .dc-mobile-full-page-modal__header-return {
+      display: flex;
+      align-items: center;
+      margin-right: 1.6rem; }
+    .dc-mobile-full-page-modal__header-text {
+      display: flex;
+      flex-direction: row; }
+    .dc-mobile-full-page-modal__header-trailing-icon {
+      align-items: center;
+      display: flex;
+      margin-left: auto; }
+  .dc-mobile-full-page-modal__body {
+    flex: 1;
+    overflow-y: auto; }
+  .dc-mobile-full-page-modal__footer {
+    border-top: 2px solid var(--general-section-1);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding: 1.6rem; }
   .dc-mobile-full-page-modal form {
     height: 100%; }
   .dc-mobile-full-page-modal .dc-page-overlay__content {
@@ -15531,6 +15563,7 @@
     @media (min-width: 320px) and (max-width: 767px) {
       .currency-list__items {
         display: grid;
+        margin-bottom: 5rem;
         grid-template-columns: 1fr 1fr;
         justify-items: center;
         width: 100%; } }
@@ -15620,6 +15653,23 @@
       border-color: var(--border-disabled);
       margin-left: -2.4rem;
       width: calc(100% + 2.4rem); } }
+
+.currency-selector__radio-group--with-margin--is-header {
+  font-size: 1.6rem;
+  margin: 2rem 0 0;
+  font-weight: bold;
+  color: var(--text-prominent); }
+
+@media (min-width: 1024px) {
+  .currency-selector__radio-group--with-margin {
+    margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 768px; } }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .currency-selector__radio-group--with-margin {
+    margin-bottom: 7rem; } }
 
 /*------------------------------------*
  *  # Constants
@@ -16129,7 +16179,7 @@
     padding: 10px;
     background-color: var(--general-section-1);
     border-radius: 4px; }
-  .add-or-manage .with-margin--is-header {
+  .add-or-manage__with-margin--is-header {
     font-size: 1.6rem;
     font-weight: bold;
     font-stretch: normal;
@@ -16139,7 +16189,7 @@
     color: var(--text-general);
     text-align: center; }
   @media (min-width: 1024px) {
-    .add-or-manage .currency-selector__radio-group.with-margin {
+    .add-or-manage .currency-selector__radio-group--with-margin {
       margin-bottom: 6rem;
       margin-left: auto;
       margin-right: auto;
@@ -16161,7 +16211,7 @@
       .add-or-manage .account-wizard__btn-area .dc-btn:last-child {
         min-width: unset;
         margin: 0 1.6rem; }
-      .add-or-manage .currency-selector__radio-group.with-margin {
+      .add-or-manage .currency-selector__radio-group--with-margin {
         margin-bottom: 7rem; }
       .add-or-manage .change-currency .currency-list__items {
         margin-bottom: 12rem; }
@@ -16548,7 +16598,7 @@
       letter-spacing: normal;
       margin-top: 2rem; }
   .set-currency-modal .currency-selector {
-    min-height: 330px; }
+    min-height: 390px; }
     .set-currency-modal .currency-selector__radio-group--is-header {
       font-size: 1.6rem;
       font-weight: bold;
@@ -17405,6 +17455,10 @@
   z-index: 4;
   position: absolute;
   right: 0; }
+  .notification-messages > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
   @media (min-width: 320px) and (max-width: 767px) {
     .notification-messages {
       left: 1.6rem;
@@ -17415,6 +17469,7 @@
   position: relative;
   display: flex;
   border-radius: 4px;
+  width: 100%;
   max-width: 40rem;
   padding: 1.6rem;
   color: var(--text-prominent);
@@ -17429,7 +17484,7 @@
     opacity: 0;
     transform: translateY(-16px); }
   .notification--small {
-    max-width: 240px; }
+    max-width: 28rem; }
   .notification__cta-button {
     padding: 0 0.8rem;
     margin-top: 1.6rem;
@@ -17447,7 +17502,6 @@
     z-index: 2;
     width: 100%; }
   .notification__text-body {
-    width: 28.4rem;
     font-size: 1.4rem;
     line-height: 1.43; }
   .notification__action {

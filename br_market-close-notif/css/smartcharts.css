@@ -304,7 +304,8 @@
   display: flex;
   padding: 24px;
   flex-direction: column;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border-radius: 4px; }
 .smartcharts-light .sc-interval {
     background: #ffffff;
     color: #333333; }
@@ -422,14 +423,16 @@
       color: #333333 !important; }
 .smartcharts-dark .sc-chart-mode__menu__timeperiod {
       color: #c2c2c2 !important; }
+.sc-chart-mode__section {
+  border-radius: 4px; }
 .smartcharts-light .sc-chart-mode__section {
-  background: #ffffff; }
+    background: #ffffff; }
 .smartcharts-dark .sc-chart-mode__section {
-  background: #151717; }
+    background: #151717; }
 .smartcharts-light .sc-chart-mode__section__item:first-child {
-  border-bottom: 4px solid #f2f3f4; }
+    border-bottom: 4px solid #f2f3f4; }
 .smartcharts-dark .sc-chart-mode__section__item:first-child {
-  border-bottom: 4px solid #0e0e0e; }
+    border-bottom: 4px solid #0e0e0e; }
 .sc-toolbar-widget .sc-chart-mode__menu {
   padding: 8px; }
 .sc-toolbar-widget .sc-chart-mode__menu__timeperiod {
@@ -2105,7 +2108,8 @@
   width: 320px; }
 .sc-download {
   padding: 24px;
-  display: flex; }
+  display: flex;
+  border-radius: 4px; }
 .smartcharts-light .sc-download {
     background: #ffffff;
     color: #333333; }

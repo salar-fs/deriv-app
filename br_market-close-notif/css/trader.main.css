@@ -2415,8 +2415,8 @@
   .market-is-closed-overlay__main-heading {
     margin-bottom: 2rem; }
   .market-is-closed-overlay__open-date, .market-is-closed-overlay__main-message {
-    margin-bottom: 1rem; }
-  .market-is-closed-overlay__open-at--main-page {
+    margin-bottom: 2rem; }
+  .market-is-closed-overlay__open-at--main-page, .market-is-closed-overlay__come-back--main-page {
     margin-bottom: 1rem; }
   .market-is-closed-overlay__separator {
     margin-top: 1rem;
