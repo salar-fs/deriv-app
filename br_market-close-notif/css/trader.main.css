@@ -585,7 +585,7 @@
     height: 0.2rem;
     border-radius: 50%;
     position: absolute;
-    margin-top: 1rem;
+    bottom: 0.8rem;
     right: 1.5rem;
     display: block;
     transition: transform 0.25s ease;
@@ -1095,8 +1095,7 @@
 /** @define chart-container; weak */
 .chart-container {
   width: 100%;
-  position: relative;
-  z-index: 1; }
+  position: relative; }
   .chart-container__wrapper {
     position: fixed;
     top: calc(48px + 2px);
@@ -1417,7 +1416,7 @@
         height: 100%; } }
 
 /** @define .contract-card; weak */
-.contract-card--market-closed {
+.contract-card__market-closed {
   position: absolute;
   top: 0;
   left: 0;
@@ -1430,34 +1429,10 @@
   padding: 0;
   background-image: var(--contract-gradient-danger);
   z-index: 1000; }
-  .contract-card--market-closed p {
-    font-size: 1.4rem;
-    color: var(--text-general);
-    font-weight: 400;
-    text-transform: none;
-    text-align: center;
-    line-height: 1.5;
-    font-size: 12px;
-    color: var(--text-prominent);
-    text-transform: none; }
-    .contract-card--market-closed p.market-is-closed-overlay__timer {
-      font-weight: bold;
-      font-size: 1.4rem; }
-  .contract-card--market-closed p.contract-card--market-closed--heading {
-    font-size: 16px;
-    color: #ff6444;
-    font-weight: bold;
-    text-transform: none;
-    text-align: center;
-    line-height: unset;
-    font-stretch: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    margin-bottom: 1rem; }
 
 .contract-card__footer {
-  margin-bottom: 0.5em;
-  padding: 0 4px; }
+  margin-bottom: 0.5rem;
+  padding: 0 0.4rem; }
   .contract-card__footer-wrapper {
     font-size: 1.2rem;
     color: var(--text-general);
@@ -1466,7 +1441,7 @@
     text-align: center;
     line-height: 1.25;
     color: var(--text-prominent);
-    padding: 8px 8px 0;
+    padding: 0.8rem 0.8rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr; }
 
@@ -2412,6 +2387,8 @@
   padding: 0 2.5rem;
   background-color: var(--overlay-inside-dialog);
   z-index: 1000; }
+  .market-is-closed-overlay--loading {
+    display: none; }
   .market-is-closed-overlay__main-heading {
     margin-bottom: 2rem; }
   .market-is-closed-overlay__open-date, .market-is-closed-overlay__main-message {
@@ -2734,6 +2711,9 @@
   @media (min-width: 320px) and (max-width: 767px) {
     .btn-purchase--multiplier .trade-container__price-info {
       justify-content: center; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .btn-purchase--multiplier-deal-cancel {
+      height: 64px; } }
 
 /** @define range-slider */
 .range-slider {
@@ -3490,17 +3470,6 @@
         transform: translateX(5px); }
     .trade-container__fieldset-wrapper--disabled .btn-purchase__box-shadow {
       opacity: 0; }
-    .trade-container__fieldset-tooltip-text, .trade-container__fieldset-text {
-      margin-top: 0.8rem;
-      font-size: 1.2rem;
-      text-align: right; }
-    .trade-container__fieldset-tooltip-text {
-      border-bottom: 1px dotted var(--text-general);
-      text-decoration: none;
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
-      width: fit-content;
-      margin-left: auto; }
     .trade-container__fieldset .dc-datepicker .dc-input {
       border: 1px solid var(--fill-normal);
       background-color: var(--general-main-1);
@@ -3588,7 +3557,7 @@
             align-items: center; } }
       @media (min-width: 1024px) {
         .trade-container__price-info, .trade-container__order-input-info {
-          height: 2.1rem; } }
+          min-height: 2.1rem; } }
       .trade-container__price-info--disabled, .trade-container__order-input-info--disabled {
         opacity: 0.32; }
       .trade-container__price-info--slide, .trade-container__order-input-info--slide {
@@ -3600,11 +3569,11 @@
       .trade-container__price-info--fade .trade-container__price-info-movement, .trade-container__order-input-info--fade .trade-container__price-info-movement {
         opacity: 0; }
       .trade-container__price-info-value, .trade-container__order-input-info-value {
-        font-size: 1.4em;
+        font-size: 1.4rem;
         font-weight: 700;
         text-align: left;
         line-height: 1.25;
-        margin-left: 0.1em;
+        margin-left: 0.1rem;
         color: var(--text-prominent);
         opacity: 1;
         transition: 0.3s; }
@@ -3742,8 +3711,22 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
+    .trade-container__cancel-deal-info--row-layout {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start; }
+      .trade-container__cancel-deal-info--row-layout .trade-container__price-info-currency {
+        margin-left: -0.1rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .trade-container__cancel-deal-info--row-layout {
+          padding: 0.4rem 0 0 !important;
+          margin-bottom: -0.5rem; }
+          .trade-container__cancel-deal-info--row-layout .trade-container__price-info-currency {
+            font-size: 0.9rem !important; }
+          .trade-container__cancel-deal-info--row-layout .trade-container__price-info-basis {
+            font-size: 0.8rem; } }
     .trade-container__cancel-deal-info .trade-container__price-info-currency {
-      font-size: 1.1rem; }
+      font-size: 1.2rem; }
     @media (min-width: 320px) and (max-width: 767px) {
       .trade-container__cancel-deal-info {
         padding: 0 0.4rem;
@@ -3752,7 +3735,20 @@
           color: var(--text-general); }
         .trade-container__cancel-deal-info .trade-container__price-info-value {
           color: var(--text-prominent);
-          font-size: 1rem; } }
+          font-size: 1rem; }
+        .trade-container__cancel-deal-info .trade-container__price-info-currency {
+          font-size: 0.9rem; } }
+  .trade-container__multipliers-trade-info {
+    display: flex;
+    justify-content: space-evenly; }
+    .trade-container__multipliers-trade-info-tooltip-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0.8rem;
+      text-align: right; }
+      .trade-container__multipliers-trade-info-tooltip-text span {
+        border-bottom: 1px dotted var(--text-general); }
   .trade-container__popover {
     /* postcss-bem-linter: ignore */ }
     .trade-container__popover .dc-checkbox {

@@ -502,7 +502,7 @@
   align-items: center;
   margin-bottom: 3.2rem;
   line-height: 1.43; }
-  .dc-input:hover:not(.dc-input__disabled) {
+  .dc-input:hover:not(.dc-input--disabled) {
     border-color: var(--border-hover); }
   .dc-input[focus-within] {
     border-color: var(--brand-secondary); }
@@ -512,7 +512,7 @@
       border-color: var(--brand-secondary); }
     .dc-input:focus-within:hover {
       border-color: var(--brand-secondary); }
-  .dc-input__disabled {
+  .dc-input--disabled {
     border-color: var(--general-disabled);
     color: var(--text-disabled); }
   .dc-input__field {
@@ -537,11 +537,6 @@
       opacity: 0;
       -ms-transition: opacity 0.25s;
       transition: opacity 0.25s; }
-    .dc-input__field::-ms-input-placeholder {
-      line-height: 1.5;
-      opacity: 0;
-      -ms-transition: opacity 0.25s;
-      transition: opacity 0.25s; }
     .dc-input__field::placeholder {
       line-height: 1.5;
       opacity: 0;
@@ -549,8 +544,6 @@
     .dc-input__field--placeholder-visible::-moz-placeholder {
       opacity: 0.2; }
     .dc-input__field--placeholder-visible:-ms-input-placeholder {
-      opacity: 0.2; }
-    .dc-input__field--placeholder-visible::-ms-input-placeholder {
       opacity: 0.2; }
     .dc-input__field--placeholder-visible::placeholder {
       opacity: 0.2; }
@@ -578,8 +571,6 @@
       .dc-input__field:focus::-moz-placeholder {
         opacity: 0.4; }
       .dc-input__field:focus:-ms-input-placeholder {
-        opacity: 0.4; }
-      .dc-input__field:focus::-ms-input-placeholder {
         opacity: 0.4; }
       .dc-input__field:focus::placeholder {
         opacity: 0.4; }
@@ -4945,8 +4936,6 @@
   .input::-moz-placeholder {
     border-color: var(--border-normal); }
   .input:-ms-input-placeholder {
-    border-color: var(--border-normal); }
-  .input::-ms-input-placeholder {
     border-color: var(--border-normal); }
   .input::placeholder {
     border-color: var(--border-normal); }
@@ -10914,8 +10903,6 @@
   text-transform: none;
   text-align: center;
   line-height: 1.75;
-  color: var(--text-prominent);
-  line-height: 1.5;
   max-width: 502px;
   margin: 1.6rem 0 2.4rem; }
   .dc-page-error__message-wrapper {
@@ -10930,6 +10917,18 @@
   @media (min-width: 1024px) {
     .dc-page-error__message--left {
       text-align: left; } }
+
+.dc-page-error__btn {
+  margin: 0 1rem;
+  min-width: 14rem; }
+  .dc-page-error__btn-wrapper {
+    display: flex;
+    justify-content: center; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .dc-page-error__btn {
+      margin: 0 0 1.6rem; }
+      .dc-page-error__btn-wrapper {
+        flex-direction: column; } }
 
 /*------------------------------------*
  *  # Constants
@@ -11754,6 +11753,111 @@
     .dc-radio-group__circle--selected {
       border-width: 4px;
       border-color: var(--brand-red-coral); }
+
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+.dc-read-more__toggle {
+  color: var(--status-danger);
+  font-weight: var(--text-weight-bold); }
 
 /*------------------------------------*
  *  # Constants
@@ -14463,6 +14567,7 @@
       height: 1px;
       background: var(--border-disabled); }
     .notifications-item__cta-button {
+      padding: 0.3rem 0.8rem;
       margin: 0.8rem 0 0.8rem auto;
       height: 2.4rem;
       width: auto; }
@@ -14677,7 +14782,7 @@
   flex-direction: row;
   height: 100%;
   justify-content: center;
-  padding: 0 1.6em 0 1.7em; }
+  padding: 0 1.6rem 0 1.7rem; }
   .acc-info__preloader {
     position: absolute;
     top: 0;
@@ -14700,7 +14805,7 @@
     @media (min-width: 320px) and (max-width: 767px) {
       .acc-info__preloader {
         width: 216px;
-        height: 40px;
+        height: 42px;
         top: -3px; }
         .acc-info__preloader:before {
           display: none; }
@@ -14756,10 +14861,15 @@
       .acc-info:hover:not(.show):not(.acc-info--is-disabled) .symbols {
         background: transparent; } }
   @media (min-width: 320px) and (max-width: 767px) {
-    .acc-info__balance {
-      font-size: 1.4rem; }
-      .acc-info__balance--no-currency {
-        white-space: nowrap; } }
+    .acc-info {
+      padding: 0 1rem;
+      margin-right: -0.8rem; }
+      .acc-info__id {
+        margin-right: -0.8rem; }
+      .acc-info__balance {
+        font-size: 1.4rem; }
+        .acc-info__balance--no-currency {
+          white-space: nowrap; } }
   .acc-info--is-virtual .acc-info__balance {
     color: var(--text-profit-success); }
   .acc-info--is-disabled {
@@ -17461,6 +17571,7 @@
     align-items: flex-end; }
   @media (min-width: 320px) and (max-width: 767px) {
     .notification-messages {
+      max-width: calc(100% - 3.2rem);
       left: 1.6rem;
       right: 1.6rem; } }
 
@@ -17548,9 +17659,9 @@
     margin-bottom: 16px; }
   @media (min-width: 320px) and (max-width: 767px) {
     .notification {
-      max-width: 348px; }
-      .notification--small {
-        max-width: unset; } }
+      max-width: 328px;
+      width: calc(100% - 0.8rem);
+      margin-right: 0.4rem; } }
 
 /*------------------------------------*
  *  # Constants
@@ -18497,6 +18608,8 @@ strong {
     display: inline-flex;
     height: 47px;
     position: relative; }
+    .header__menu-right--hidden {
+      display: none; }
     @media (min-width: 320px) and (max-width: 767px) {
       .header__menu-right .acc-info__separator {
         display: none; }
@@ -18995,6 +19108,7 @@ strong {
   color: var(--text-prominent);
   border-radius: 4px;
   box-shadow: 0 4px 6px 0 var(--shadow-menu), 0 4px 6px 0 var(--shadow-menu);
+  width: 100%;
   max-width: 348px;
   height: 124px;
   transition: transform 0.25s ease, opacity 0.25s linear;
@@ -19054,6 +19168,11 @@ strong {
     right: 16px;
     top: 16px;
     cursor: pointer; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .notification-banner {
+      max-width: 328px;
+      width: calc(100% - 0.8rem);
+      margin-right: 0.4rem; } }
 
 /** @define page-404 */
 .page-404__image {
@@ -19138,7 +19257,8 @@ strong {
     margin-bottom: 0.8rem;
     border-radius: 0 0 8px 8px; }
   .reality-check__row :first-child {
-    width: 11.8rem; }
+    width: 12.8rem;
+    padding-right: 0.8rem; }
     @media (min-width: 320px) and (max-width: 767px) {
       .reality-check__row :first-child {
         width: 16.8rem; } }
